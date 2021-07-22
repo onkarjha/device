@@ -1,0 +1,232 @@
+<!--This is contributed by Onkar Jha of youtube channel Tech with Onkar. Don't forgot to subscribe him-->
+<html>
+   <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- Popper JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+      <style>
+         *{margin:0;
+         padding: 0;
+         box-sizing: border-box;
+         }body{font-family: 'mulish', sans-serif;
+         background:#e6e6e6;;
+         }
+         #wrapper{
+         box-shadow: 10px 10px 15px rgb(0 0 0 / 10%);
+         border-left: 5px solid #e91e63;
+         padding: 20px 15px 20px 20px;display: flex;
+         border-radius: 3px;align-items: center;transition: all .3s ease-in;
+         background: white;position: fixed;
+         bottom: 15px;
+         left: 15px;max-width: 100%;
+         }.svg{
+         background: #e91e63;
+         padding: 20px;width:50px;
+         height: 50px;
+         border-radius: 50px;display: flex;
+         align-items: center;justify-content: center;
+         }.status{margin-left: 20px;
+         }span{
+         font-size: 20px;font-weight: bold;letter-spacing: 1px;
+         }p{
+         color: #878787;;
+         }.cancel{margin-right: 10px;
+         margin-left: 20px;width:40px;
+         height: 40px;
+         border-radius: 50px;display: flex;
+         align-items: center;justify-content: center;
+         background: #dedede;cursor:pointer;
+         transition: all .3s ease-in;
+         }.no_wifi{
+         width:30px;
+         height: 30px;
+         }.cross{
+         width:20px;
+         height: 20px;
+         }.cancel:hover{
+         background: #bfbfbf;
+         }nav{
+         width:100%;
+         background: black;
+         height: 50px;position: sticky;
+         top:0;
+         }.nav{
+         width:100%;
+         max-width: 1280px;
+         background: black;
+         position: sticky;
+         top:0;
+         height: 50px;
+         margin:auto;
+         align-items: center;
+         display: flex;
+         justify-content: space-between;
+         }.nav h1{
+         margin-left: 20px;
+         color: white;font-size:20px;margin-bottom: 0;
+         }.nav button{
+         border:none;
+         outline: none;
+         background: transparent;
+         transition: all .3s ease-in;
+         padding: 7px 15px;
+         border-radius: 20px;
+         color:white;
+         border:2px solid white;
+         font-family: mulish;
+         margin-right: 20px;
+         }.nav button:hover{
+         background: #e91e63;
+         border:2px solid #e91e63;
+         }.info{
+         color:black;
+         padding: 20px;
+         }table{
+         margin:auto;margin-top:40px;background: white;
+         }.bi{
+         font-weight: bold;
+         }.bold{
+         font-weight: bold;
+         }
+         @media only screen and (max-width: 500px) {
+         #wrapper{
+         width:100%;
+         left: 0;
+         }
+         }
+      </style>
+      <script type='text/javascript'>
+         $(document).ready(function() {
+         /* user offline online script*/
+         $(".cancel").click(function() {
+         	$("#wrapper").hide();
+         	$("#wrapper").attr('id','text');
+         });
+         
+         	setInterval(function() {
+         	
+         		if(navigator.onLine==false){
+         				$("#wrapper").show(10);
+         			}else{$("#wrapper").hide(10);
+         				$("#text").attr('id','wrapper');
+         			}
+         	},100);
+         	/* user offline/online script ends*/
+         	var a = navigator.appCodeName;
+         	var b =navigator.javaEnabled();
+         	/* var x = "User-agent header sent: " + navigator.userAgent;*/
+         	 var d =navigator.product;
+         	 var e = navigator.platform;
+         	 var c =navigator.appVersion;
+         	 var f =navigator.appName;
+         $(".a").text(a);
+         $(".b").text(b);
+         $(".c").text(c);
+         $(".d").text(d);
+         $(".e").text(e);
+         $(".f").text(f);
+         
+         
+         
+         $.getJSON("https://api.ipify.org?format=json",
+                                            function(data) {
+         
+              // Setting text of element P with id gfg
+              $(".g").text(data.ip);
+          })
+           
+         
+         
+         
+         
+          });
+      </script>
+   </head>
+   <body>
+      <nav>
+         <div class="nav">
+            <h1>Tech With Onkar</h1>
+            <a href="https://www.youtube.com/c/TechWithOnkar1/videos" target="_blank"><button>YouTube</button></a>
+         </div>
+      </nav>
+      <p class="info">
+         Hi buddy, this is a simple page which will show you some information about your browser and your device. Don't worry I am not going to hack your device. 
+      </p>
+      <div class="container">
+         <h2>Info</h2>
+         <p>These are information recorded by javascript. Let me know if it is correct or not.</p>
+         <table class="table table-striped table-bordered">
+            <tbody>
+               <tr>
+                  <td class="bold">Code Name</td>
+                  <td class="a">Doe</td>
+               </tr>
+               <tr>
+                  <td class="bold">Java Enabled</td>
+                  <td class="b">Doe</td>
+               </tr>
+               <tr>
+                  <td class="bold">Device</td>
+                  <td class="c">Doe</td>
+               </tr>
+               <tr>
+                  <td class="bold">Browser Engine</td>
+                  <td class="d">Doe</td>
+               </tr>
+               <tr>
+                  <td class="bold">Platform</td>
+                  <td class="e">Doe</td>
+               </tr>
+               <tr>
+                  <td class="bold">App Name</td>
+                  <td class="f">Doe</td>
+               </tr>
+               <tr>
+                  <td class="bold">Location cordinates</td>
+                  <td class="hh">Doe</td>
+               </tr>
+               <tr>
+                  <td class="bold">Ip Address</td>
+                  <td class="g">Doe</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <div id="d"></div>
+      <div id='wrapper'>
+         <div class='svg'>
+            <img src="no_wifi.svg" class="no_wifi">
+         </div>
+         <div class='status'>
+            <span>Offline</span>
+            <p>Sorry ! You are not connected.</p>
+         </div>
+         <div class='cancel'><img src="cross.svg" class="cross"></div>
+      </div>
+      <script type="text/javascript">
+         var h = document.getElementById("d");
+         
+         
+         if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(showPosition);
+         } else {
+         x.innerHTML = "Geolocation is not supported by this browser.";
+         }
+         
+         
+         function showPosition(position) {
+         hh = position.coords.latitude +" , "+ position.coords.longitude;
+         $(".hh").text(hh);
+         }
+         
+      </script>
+   </body>
+</html>
